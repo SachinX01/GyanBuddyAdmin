@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GyanBuddy User Management</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="module">
+        import { updateUserAdminTable } from './js/admin-website.js';
+        document.addEventListener('DOMContentLoaded', updateUserAdminTable);
+    </script>
+</head>
+
+<body>
+    <!-- Sliding Sidebar (same as in admin.html) -->
+    <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="adminSidebar" aria-labelledby="adminSidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="adminSidebarLabel" class="text-white">GyanBuddy Admin</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="admin.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="quiz-stats.html">Quiz Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="user-admin.html">User Management</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-danger w-100" id="logoutBtn">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container mt-4" id="adminDashboard">
+        <button class="btn" id="sidebarToggle" aria-label="Toggle sidebar menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h2 class="text-center mb-4">User Management</h2>
+        <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Registration Date</th>
+                        <th>Total Quizzes Taken</th>
+                        <th>Total Usage Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable">
+                    <!-- User data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/admin-website.js"></script>
+</body>
+
+</html>

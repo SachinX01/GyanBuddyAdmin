@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GyanBuddy Admin Dashboard</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sliding Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="adminSidebar" aria-labelledby="adminSidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="adminSidebarLabel">GyanBuddy Admin</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="quiz-stats.html">Quiz Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-admin.html">User Management</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <button class="btn btn-danger w-100" id="logoutBtn">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <button class="btn" id="sidebarToggle" aria-label="Toggle sidebar menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Admin Login Form -->
+        <div id="loginBox">
+            <h2 class="text-center mb-4">GyanBuddy Admin Login</h2>
+            <form id="adminLoginForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="adminEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="adminEmail" required>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="adminPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="adminPassword" required>
+                    <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" style="display:none;">
+            <h2 class="text-center mb-4">GyanBuddy Admin Dashboard</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="card-title mb-0">User Statistics</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="user-stats-table">
+                                    <!-- User statistics will be inserted here by JavaScript -->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="card-title mb-0">Quiz Statistics</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="quiz-stats-table-ad">
+                                    <!-- Quiz statistics will be inserted here by JavaScript -->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/admin-website.js"></script>
+</body>
+</html>
